@@ -1,5 +1,5 @@
 <template>
-    <AppHeader/>
+    <AppHeader />
     <router-view/>
     
 </template>
@@ -11,6 +11,18 @@ export default {
   components:{
     AppHeader,
     
+  },
+  data(){
+    return({
+      filter : {
+        filterByText :"",
+        filterByTag :"",
+        filterByView :"",
+        filterByType :"",
+        filterByDate :"",
+        filterByCategory :"",
+      }
+      })
   }
 }
 </script>

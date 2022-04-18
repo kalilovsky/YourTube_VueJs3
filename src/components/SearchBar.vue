@@ -1,9 +1,9 @@
 <template>
-  <div className="input-group rounded">
-            <div className="form-outline">
-                <input name="wordSearch" value="" type="search" id="wordSearchInput" className="form-control" placeholder="Search"/>
+  <div class="input-group rounded">
+            <div class="form-outline">
+                <input name="wordSearch" v-model="textSearch" type="search" id="wordSearchInput" class="form-control" placeholder="Search" @input="$emit('searchTextChange',textSearch)"/>
             </div>
-            <button type="button" className="btn" style="borderColor : #ced4da" onClick={handelWordSearch}>
+            <button type="button" class="btn" style="borderColor : #ced4da" @click.prevent="this.$router.push({name:'searchView'})">
               
                 <img class="searchIcon" src="../assets/search-icon.svg"  alt="test">
             </button>
@@ -12,6 +12,12 @@
 
 <script>
 export default {
+    props:['filter'],
+    data(){
+        return({
+            textSearch :"",
+        })
+    }
 
 }
 </script>
