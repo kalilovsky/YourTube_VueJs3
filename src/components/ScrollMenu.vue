@@ -7,7 +7,7 @@
                 <router-link to="/managearticles/">Mon Contenu</router-link>
             </li>
             <li>
-                <router-link to="/searchpage/">Page de recherche</router-link>
+                <router-link to="/search/">Page de recherche</router-link>
             </li>
             <li>
                 <router-link to="/editmyprofile/">My Account</router-link>
@@ -57,7 +57,8 @@ export default {
     },
     methods: {
         toggleScrollMenu(){
-            store.state.scrollMenuVisibility.classList.toggle("active");
+            // store.state.scrollMenuVisibility.classList.toggle("active");
+            this.scrollVisibility = !this.scrollVisibility;
         },
         handelSubmit(e){
             // this.userInfo.connected = !this.userInfo.connected
@@ -77,7 +78,7 @@ export default {
                     } else {
                         this.userInfo = data;
                     }
-                    store.commit({type : "setScroll", scroll : this.$refs.scrollMenu})
+                    // store.commit({type : "setScroll", scroll : this.$refs.scrollMenu})
                 })
                 .catch((error)=>{
                     console.log(error.message);
@@ -92,11 +93,10 @@ export default {
             .then(data=>data.text())
             .then(response=>{
                 if(response==="disconnected"){
-                    console.log(document.cookie);
                     this.userInfo = {
                     isConnected : false
                 }
-                store.commit({type : "setScroll", scroll : this.$refs.scrollMenu})
+                // store.commit({type : "setScroll", scroll : this.$refs.scrollMenu})
                 }
             })
         },
@@ -130,9 +130,9 @@ export default {
     beforeMount(){
         this.readCookie();
     },
-    mounted(){
-        store.commit({type : "setScrollVisibility", scroll : this.$refs.scrollMenu})
-    }
+    // mounted(){
+    //     store.commit({type : "setScrollVisibility", scroll : this.$refs.scrollMenu})
+    // }
 }
 </script>
 

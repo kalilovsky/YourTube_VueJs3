@@ -26,6 +26,7 @@ export default {
     created() {
         this.getFiltredArticles();
         this.unsubscribe = store.subscribe((mutation)=>{
+            console.log("updateFilterCritera");
             if(mutation.type === "updateFilterCritera"){
                 this.getFiltredArticles();
             }

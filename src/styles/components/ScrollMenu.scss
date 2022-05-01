@@ -31,7 +31,7 @@ $color10: #dddddd;
     z-index: 500;
     padding: 20px 20px;
     &.active{
-        top: 100px;
+        transform: translateY(400px);
         transition : 0.5s;
     }
     li{

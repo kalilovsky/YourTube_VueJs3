@@ -23,7 +23,7 @@
                     <p>{{"Tag : "+ DecodeEntityLoc(article.tag)}}</p>
                 </div>
             </div>
-            
+            <slot></slot>
         </div>
 </template>
 

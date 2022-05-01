@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ArticleView from '../views/ArticleView.vue'
 import SearchView from '@/views/SearchView.vue'
+import ManageMyArticles from '@/views/ManageMyArticles.vue'
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     name: 'searchView',
     component: SearchView 
   },
+  {
+    path:"/managearticles",
+    name:"/managearticles",
+    component : ManageMyArticles
+  }
 ]
 
 const router = createRouter({

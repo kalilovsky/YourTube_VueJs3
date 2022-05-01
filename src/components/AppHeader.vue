@@ -27,7 +27,7 @@
                 </ul>
             </div>
         </nav>
-        <ScrollMenu :active="toggleScrollMenu" ref="testtest"></ScrollMenu>
+        <ScrollMenu :active="toggleScrollMenuBool"></ScrollMenu>
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
@@ -103,6 +103,7 @@ export default {
     data() {
         return {
             toggleFilter: false,
+            toggleScrollMenuBool : false,
             categories: {},
             filter: {
                 filterByText: "",
@@ -120,7 +121,8 @@ export default {
     },
     methods: {
         toggleScrollMenu(){
-            store.state.scrollMenuVisibility.classList.toggle("active");
+            // store.state.scrollMenuVisibility.classList.toggle("active");
+            this.toggleScrollMenuBool = ! this.toggleScrollMenuBool
         },
         handelFilterAccordion() {
             this.toggleFilter = !this.toggleFilter;
