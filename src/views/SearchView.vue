@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         getFiltredArticles: async function () {
-            const url = new URL("http://localhost:3000/public/api/index.php?controller=ArticlesController&action=searchArticles")
+            const url = new URL("./api/index.php?controller=ArticlesController&action=searchArticles")
             if(store.state.filterCriteria.filterByText!==""){
                 url.searchParams.append('text',store.state.filterCriteria.filterByText )
             }

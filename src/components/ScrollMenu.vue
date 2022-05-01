@@ -70,7 +70,7 @@ export default {
                 credentials: "include",
                 body: formData
             };
-            fetch("http://localhost:3000/public/api/index.php", options)
+            fetch("./api/index.php", options)
                 .then(data => data.json())
                 .then(data => {
                     if (!data.isConnected) {
@@ -89,7 +89,7 @@ export default {
                 method: "get",
                 credentials: "include",
             };
-            fetch("http://localhost:3000/public/api/index.php?controller=UsersController&action=disconnect", options)
+            fetch("./api/index.php?controller=UsersController&action=disconnect", options)
             .then(data=>data.text())
             .then(response=>{
                 if(response==="disconnected"){
