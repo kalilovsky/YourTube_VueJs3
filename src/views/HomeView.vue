@@ -40,7 +40,7 @@ export default {
     },
     methods:{
         getAllArticles : async function () {
-            const request = await fetch("http://localhost:3000/index.php?controller=ArticlesController&action=getallarticles")
+            const request = await fetch("http://localhost:3000/public/api/index.php?controller=ArticlesController&action=getallarticles")
             if (request.status !== 500) {
                 const response = await request.json();
                 this.allArticles= response;

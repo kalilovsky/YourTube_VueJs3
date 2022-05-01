@@ -45,7 +45,7 @@ export default {
                 method: "post",
                 credentials: "include",
             };
-            fetch("http://localhost:3000/index.php?controller=ArticlesController&action=getArticleByUserId&idUser=" + this.idUser, options)
+            fetch("http://localhost:3000/public/api/index.php?controller=ArticlesController&action=getArticleByUserId&idUser=" + this.idUser, options)
                 .then(request => request.json())
                 .then(response => {
                     if (response !== "Not Authorised.") {
@@ -63,7 +63,7 @@ export default {
                 credentials: "include",
             };
             let idArticle = e.target.name;
-            const request = await fetch("http://localhost:3000/index.php?controller=ArticlesController&action=deleteArticle&idArticle=" + idArticle, options)
+            const request = await fetch("http://localhost:3000/public/api/index.php?controller=ArticlesController&action=deleteArticle&idArticle=" + idArticle, options)
             if (request.status !== 500) {
                 const response = await request.json();
                 if (response !== "Not Authorised." || response !== "problem detected") {

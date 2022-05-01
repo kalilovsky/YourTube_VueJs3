@@ -2,11 +2,11 @@
   <div class="cardsMain" v-if="Object.keys(currentArticle).length>0" >
         
         <div class="imgArticle">
-            <video v-if="currentArticle.fileType==='video'" :src="'http://localhost:3000/public/articlefile/'+currentArticle.filePath" controls /> 
-            <img v-else :src="'http://localhost:3000/public/articlefile/'+currentArticle.filePath" alt="l'article">
+            <video v-if="currentArticle.fileType==='video'" :src="'http://localhost:3000/public/api/public/articlefile/'+currentArticle.filePath" controls /> 
+            <img v-else :src="'http://localhost:3000/public/api/public/articlefile/'+currentArticle.filePath" alt="l'article">
         </div>
         <div class="imgUser">
-        <img :src="'http://localhost:3000/public/userprofile/'+currentArticle.profilPhoto" alt="user">
+        <img :src="'http://localhost:3000/public/api/public/userprofile/'+currentArticle.profilPhoto" alt="user">
             
             <div class="resume">
                 <p class="title">{{DecodeEntityLoc(currentArticle.title)}}</p>
@@ -38,7 +38,7 @@ export default {
             return DecodeEntity(text)
         },
         getArticleById : async function (idArticle) {
-            const request = await fetch("http://localhost:3000/index.php?controller=ArticlesController&action=getarticlebyid&id="+idArticle)
+            const request = await fetch("http://localhost:3000/public/api/index.php?controller=ArticlesController&action=getarticlebyid&id="+idArticle)
             if (request.status !== 500) {
                 const response = await request.json();
                 this.currentArticle= {...response[0]};

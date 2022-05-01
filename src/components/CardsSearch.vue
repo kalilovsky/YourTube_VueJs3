@@ -3,8 +3,8 @@
         <router-link :to="'/article/' + this.article.idArticle" ></router-link>
             <div class="imgArticle">
                 <span>{{ article.fileType}}</span>
-               <video v-if="article.fileType==='video'" ref="videoElement" :src="'http://localhost:3000/public/articlefile/'+article.filePath" loop muted /> 
-               <img v-else :src="'http://localhost:3000/public/articlefile/'+article.filePath" alt="l'article">
+               <video v-if="article.fileType==='video'" ref="videoElement" :src="'http://localhost:3000/public/api/public/articlefile/'+article.filePath" loop muted /> 
+               <img v-else :src="'http://localhost:3000/public/api/public/articlefile/'+article.filePath" alt="l'article">
             </div>
             <div class="imgUser">
                 <div class="resume">
@@ -12,7 +12,7 @@
                     <p class="viewed">{{article.viewCount +" Vues"}}</p>
                 </div>
                 <div class="otherDetail">
-                    <img :src="'http://localhost:3000/public/userprofile/'+article.profilPhoto" alt="test">
+                    <img :src="'http://localhost:3000/public/api/public/userprofile/'+article.profilPhoto" alt="test">
                     <p class="submitter">{{article.pseudo}}</p>
                     <p>&#8226;</p>
                     <p>{{article.categorieName}}</p>

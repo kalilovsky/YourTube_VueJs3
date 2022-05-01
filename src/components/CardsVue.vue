@@ -5,11 +5,11 @@
         <div class="imgArticle">
             <span>{{ article.fileType }}</span>
             <video v-if="article.fileType === 'video'" ref="videoElement"
-                :src="'http://localhost:3000/public/articlefile/' + article.filePath" loop muted />
-            <img v-else :src="'http://localhost:3000/public/articlefile/' + article.filePath" alt="l'article">
+                :src="'http://localhost:3000/public/api/public/articlefile/' + article.filePath" loop muted />
+            <img v-else :src="'http://localhost:3000/public/api/public/articlefile/' + article.filePath" alt="l'article">
         </div>
         <div class="imgUser">
-            <img :src="'http://localhost:3000/public/userprofile/' + article.profilPhoto" alt="user">
+            <img :src="'http://localhost:3000/public/api/public/userprofile/' + article.profilPhoto" alt="user">
             <div class="resume">
                 <p class="title">{{ DecodeEntityLoc(article.title) }}</p>
                 <p class="submitter">{{ article.pseudo + " | Catégorie : " + article.categorieName }}</p>
